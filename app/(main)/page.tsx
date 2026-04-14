@@ -7,7 +7,10 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <main className="flex-1 ">
         {/* Hero Section */}
-        <section className="relative min-h-[65vh] mx-auto py-12 md:py-24">
+        <section
+          id="about"
+          className="relative min-h-[65vh] mx-auto py-12 md:py-24"
+        >
           {/* Background */}
           <div className="absolute inset-0 bg-[url('/table_vinyl.jpg')] bg-cover bg-center" />
           {/* Overlay */}
@@ -54,7 +57,7 @@ export default function Home() {
         >
           <div className="max-w-6xl mx-auto text-center">
             {/* Title */}
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">
               Everything you need to elevate your collection
             </h2>
 

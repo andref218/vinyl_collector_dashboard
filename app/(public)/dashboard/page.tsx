@@ -8,6 +8,6 @@ export default async function Collection() {
     redirect("/sign-in");
   }
   return (
-    <div className="flex min-h-screen items-center flex-col">Collection</div>
+    <div className="flex min-h-screen items-center flex-col">Dashboard</div>
   );
 }

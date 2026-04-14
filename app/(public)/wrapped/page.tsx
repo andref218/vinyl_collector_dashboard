@@ -7,7 +7,5 @@ export default async function Collection() {
   if (!session?.user) {
     redirect("/sign-in");
   }
-  return (
-    <div className="flex min-h-screen items-center flex-col">Collection</div>
-  );
+  return <div className="flex min-h-screen items-center flex-col">Wrapped</div>;
 }
