@@ -1,8 +1,26 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { signUpWithGoogle } from "@/actions/auth";
+import { auth } from "@/auth";
+import client from "@/lib/db";
+import { redirect } from "next/navigation";
 
-export default function SignUpPage() {
+export default async function SignUpPage() {
+  const session = await auth();
+
+  if (session?.user?.email) {
+    const db = client.db();
+
+    const user = await db.collection("users").findOne({
+      email: session.user.email,
+    });
+
+    if (!user?.username) {
+      redirect("/onboarding");
+    }
+
+    redirect("/collection");
+  }
   return (
     <main className="min-h-screen bg-black text-white flex items-center justify-center px-6">
       <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl">
